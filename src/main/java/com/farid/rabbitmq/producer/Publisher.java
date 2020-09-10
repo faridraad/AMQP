@@ -12,7 +12,7 @@ public class Publisher {
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
-        String message = "product details";
+        String message = "details";
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
 
         channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
